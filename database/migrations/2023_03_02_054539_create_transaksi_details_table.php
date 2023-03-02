@@ -17,6 +17,9 @@ return new class extends Migration
             $table->bigInteger('barang_id');
             $table->decimal('qty_jual', 30, 3);
             $table->timestamps();
+
+            $table->foreign('transaksi_id')->references('id')->on('transaksis')->onDelete('cascade');
+            $table->foreign('barang_id')->references('id')->on('barangs')->onDelete('cascade');
         });
     }
 
