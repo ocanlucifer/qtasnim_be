@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\API\BarangController;
 use App\Http\Controllers\API\JenisBarangController;
+use App\Http\Controllers\API\ReportTransaksiController;
 use App\Http\Controllers\API\TransaksiController;
 use App\Http\Controllers\API\TransaksiDetailController;
 use Illuminate\Http\Request;
@@ -25,3 +26,6 @@ Route::apiResource('jenis_barangs', JenisBarangController::class);
 Route::apiResource('barangs', BarangController::class);
 Route::apiResource('transaksi', TransaksiController::class);
 Route::apiResource('transaksi_detail', TransaksiDetailController::class);
+
+Route::get('reportTrx', [ReportTransaksiController::class, 'index']);
+Route::get('compareTrx', [ReportTransaksiController::class, 'compareJenis']);

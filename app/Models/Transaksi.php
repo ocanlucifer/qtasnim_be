@@ -12,7 +12,6 @@ class Transaksi extends Model
     protected $fillable = [
         'kode_transaksi',
         'tgl_transaksi',
-        'total_transaksi',
     ];
 
     public function transaksi_details()

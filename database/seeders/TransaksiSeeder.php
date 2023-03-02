@@ -17,35 +17,30 @@ class TransaksiSeeder extends Seeder
             'id'                    => 1,
             'kode_transaksi'        => 'TRX00001',
             'tgl_transaksi'         => '2021-05-01',
-            'total_transaksi'       => '10',
         ]);
 
         Transaksi::create([
             'id'                    => 2,
             'kode_transaksi'        => 'TRX00002',
             'tgl_transaksi'         => '2021-05-05',
-            'total_transaksi'       => '19',
         ]);
 
         Transaksi::create([
             'id'                    => 3,
             'kode_transaksi'        => 'TRX00003',
             'tgl_transaksi'         => '2021-05-10',
-            'total_transaksi'       => '15',
         ]);
 
         Transaksi::create([
             'id'                    => 4,
             'kode_transaksi'        => 'TRX00004',
             'tgl_transaksi'         => '2021-05-11',
-            'total_transaksi'       => '50',
         ]);
 
         Transaksi::create([
             'id'                    => 5,
             'kode_transaksi'        => 'TRX00005',
             'tgl_transaksi'         => '2021-05-12',
-            'total_transaksi'       => '30',
         ]);
     }
 }

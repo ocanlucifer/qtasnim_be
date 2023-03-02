@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('kode_transaksi', 10)->unique();
             $table->date('tgl_transaksi');
-            $table->decimal('total_transaksi', 30, 3);
             $table->timestamps();
         });
     }
