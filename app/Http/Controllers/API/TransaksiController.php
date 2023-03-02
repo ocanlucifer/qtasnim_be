@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\BaseController;
 use App\Http\Requests\TransaksiRequest;
 use App\Http\Resources\TransaksiResource;
+use App\Models\Barang;
 use App\Models\Transaksi;
 
 class TransaksiController extends BaseController
@@ -79,6 +80,15 @@ class TransaksiController extends BaseController
     {
         $transaksi = Transaksi::find($id);
         if ($transaksi) {
+            foreach ($transaksi->transaksi_details as $details) {
+                $returnStock = $details->qty_jual;
+                $brg_id = $details->barang_id;
+                $brg = Barang::find($brg_id);
+                $stockAkhir = ($brg->stock + $returnStock);
+                $brg->update([
+                    'stock' => $stockAkhir,
+                ]);
+            }
             $transaksi->delete();
             return $this->sendResponse(new TransaksiResource($transaksi), 'transaksi deleted');
         }

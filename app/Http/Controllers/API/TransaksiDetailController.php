@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\BaseController;
 use App\Http\Requests\TransaksiDetailRequest;
 use App\Http\Resources\TransaksiDetailResource;
+use App\Models\Barang;
 use App\Models\TransaksiDetail;
 
 class TransaksiDetailController extends BaseController
@@ -26,9 +27,15 @@ class TransaksiDetailController extends BaseController
      */
     public function store(TransaksiDetailRequest $request)
     {
+        $brg_id = $request['barang_id'];
+        $brg = Barang::find($brg_id);
         $data = $request->all();
         $transaksiDetail = TransaksiDetail::create($data);
         if ($transaksiDetail) {
+            $stockAkhir = $brg->stock - $data['qty_jual'];
+            $brg->update([
+                'stock' => $stockAkhir,
+            ]);
             return $this->sendResponse(new TransaksiDetailResource($transaksiDetail), 'transaksiDetail created');
         }
         return $this->sendError('create transaksiDetail failed');
@@ -51,10 +58,21 @@ class TransaksiDetailController extends BaseController
      */
     public function update(TransaksiDetailRequest $request, string $id)
     {
+        $brg_id = $request['barang_id'];
+        $brg = Barang::find($brg_id);
+
         $data = $request->all();
         $transaksiDetail = TransaksiDetail::find($id);
         if ($transaksiDetail) {
+            $returnStock = $transaksiDetail->qty_jual;
+
             $transaksiDetail->update($data);
+
+            $stockAkhir = ($brg->stock + $returnStock) - $data['qty_jual'];
+            $brg->update([
+                'stock' => $stockAkhir,
+            ]);
+
             return $this->sendResponse(new TransaksiDetailResource($transaksiDetail), 'transaksiDetail updated');
         }
         return $this->sendError('transaksiDetail not found');
@@ -67,7 +85,17 @@ class TransaksiDetailController extends BaseController
     {
         $transaksiDetail = TransaksiDetail::find($id);
         if ($transaksiDetail) {
+            $brg_id = $transaksiDetail->barang_id;
+            $brg = Barang::find($brg_id);
+            $returnStock = $transaksiDetail->qty_jual;
+
             $transaksiDetail->delete();
+
+            $stockAkhir = ($brg->stock + $returnStock);
+            $brg->update([
+                'stock' => $stockAkhir,
+            ]);
+
             return $this->sendResponse(new TransaksiDetailResource($transaksiDetail), 'transaksiDetail deleted');
         }
         return $this->sendError('transaksiDetail not found');
