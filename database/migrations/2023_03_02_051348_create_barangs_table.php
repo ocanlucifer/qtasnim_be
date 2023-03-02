@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('satuan', 50);
             $table->bigInteger('jenis_barang_id');
             $table->timestamps();
+
+            $table->foreign('jenis_barang_id')->references('id')->on('jenis_barangs')->onDelete('cascade');
         });
     }
 

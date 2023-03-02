@@ -27,7 +27,6 @@ class BarangRequest extends FormRequest
             'kode_barang'           => 'required|string|max:6|unique:barangs,kode_barang,' . $this->route('barang'),
             'nama_barang'           => 'required|string|max:6|unique:barangs,nama_barang,' . $this->route('barang'),
             'stock'                 => 'required|numeric|min:0',
-            'satuan'                => 'required|string|max:50',
             'jenis_barang_id'       => [
                 'required',
                 'integer',
