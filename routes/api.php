@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\API\BarangController;
+use App\Http\Controllers\API\JenisBarangController;
+use App\Http\Controllers\API\TransaksiController;
+use App\Http\Controllers\API\TransaksiDetailController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +18,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+Route::apiResource('jenis_barangs', JenisBarangController::class);
+Route::apiResource('barangs', BarangController::class);
+Route::apiResource('transaksi', TransaksiController::class);
+Route::apiResource('transaksi_detail', TransaksiDetailController::class);
