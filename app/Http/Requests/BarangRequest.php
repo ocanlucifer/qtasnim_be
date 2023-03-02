@@ -3,6 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Exceptions\HttpResponseException;
+use Illuminate\Contracts\Validation\Validator;
 
 class BarangRequest extends FormRequest
 {
@@ -11,7 +13,7 @@ class BarangRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +24,22 @@ class BarangRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'kode_barang'           => 'required|string|max:6|unique:barangs,kode_barang,' . $this->route('barang'),
+            'nama_barang'           => 'required|string|max:6|unique:barangs,nama_barang,' . $this->route('barang'),
+            'stock'                 => 'required|numeric|min:0',
+            'satuan'                => 'required|string|max:50',
+            'jenis_barang_id'       => [
+                'required',
+                'integer',
+                'exists:jenis_barangs,id'
+            ],
         ];
+    }
+
+    public function failedValidation(Validator $validator)
+    {
+        throw new HttpResponseException(response()->json([
+            'validator'   => $validator->errors()
+        ], 422));
     }
 }

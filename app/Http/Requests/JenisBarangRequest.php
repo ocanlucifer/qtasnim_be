@@ -3,6 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Exceptions\HttpResponseException;
+use Illuminate\Contracts\Validation\Validator;
 
 class JenisBarangRequest extends FormRequest
 {
@@ -11,7 +13,7 @@ class JenisBarangRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +24,14 @@ class JenisBarangRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'jenis'     => 'required|string|max:50',
         ];
+    }
+
+    public function failedValidation(Validator $validator)
+    {
+        throw new HttpResponseException(response()->json([
+            'validator'   => $validator->errors()
+        ], 422));
     }
 }
