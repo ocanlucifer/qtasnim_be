@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('nama_barang', 50)->unique();
             $table->decimal('stock', 30, 3);
             $table->string('satuan', 50);
-            $table->bigInteger('jenis_barang_id');
+            $table->unsignedBigInteger('jenis_barang_id');
             $table->timestamps();
 
             $table->foreign('jenis_barang_id')->references('id')->on('jenis_barangs')->onDelete('cascade');

@@ -24,7 +24,7 @@ class JenisBarangRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'jenis'     => 'required|string|max:50',
+            'jenis'     => 'required|string|max:50|unique:jenis_barangs,jenis,' . $this->route('jenis_barang'),
         ];
     }
 
