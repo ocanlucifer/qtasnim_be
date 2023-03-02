@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('transaksi_details', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('transaksi_id');
-            $table->bigInteger('barang_id');
+            $table->unsignedBigInteger('transaksi_id');
+            $table->unsignedBigInteger('barang_id');
+            $table->decimal('stock_awal', 30, 3);
             $table->decimal('qty_jual', 30, 3);
             $table->timestamps();
 

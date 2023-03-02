@@ -33,7 +33,7 @@ class TransaksiController extends BaseController
         } else {
             $next = '00001';
         }
-        $nextnumber = 'B' . $next;
+        $nextnumber = 'TRX' . $next;
 
         //end autonumber
 
