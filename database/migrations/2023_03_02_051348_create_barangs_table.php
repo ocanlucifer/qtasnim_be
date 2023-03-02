@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('kode_barang', 6)->unique();
             $table->string('nama_barang', 50)->unique();
-            $table->bigInteger('stock');
+            $table->decimal('stock', 30, 3);
             $table->string('satuan', 50);
             $table->bigInteger('jenis_barang_id');
             $table->timestamps();

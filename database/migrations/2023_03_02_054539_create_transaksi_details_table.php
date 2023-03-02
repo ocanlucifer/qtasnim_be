@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('transaksi_id');
             $table->bigInteger('barang_id');
-            $table->bigInteger('qty_jual');
+            $table->decimal('qty_jual', 30, 3);
             $table->timestamps();
         });
     }

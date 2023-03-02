@@ -3,6 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Exceptions\HttpResponseException;
+use Illuminate\Contracts\Validation\Validator;
 
 class TransaksiRequest extends FormRequest
 {
@@ -11,7 +13,7 @@ class TransaksiRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +24,16 @@ class TransaksiRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'kode_transaksi'        => 'required|string|max:10|unique:transaksis,kode_transaksi,' . $this->route('transaksi'),
+            'tgl_transaksi'         => 'required|date',
+            'total_transaksi'       => 'required|numeric|min:0',
         ];
+    }
+
+    public function failedValidation(Validator $validator)
+    {
+        throw new HttpResponseException(response()->json([
+            'validator'   => $validator->errors()
+        ], 422));
     }
 }
