@@ -24,8 +24,7 @@ class BarangRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'kode_barang'           => 'sometimes|string|max:6|unique:barangs,kode_barang,' . $this->route('barang'),
-            'nama_barang'           => 'required|string|max:6|unique:barangs,nama_barang,' . $this->route('barang'),
+            'nama_barang'           => 'required|string|max:50|unique:barangs,nama_barang,' . $this->route('barang'),
             'stock'                 => 'required|numeric|min:0',
             'jenis_barang_id'       => [
                 'required',
