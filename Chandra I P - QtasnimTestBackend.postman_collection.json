@@ -1,0 +1,863 @@
+{
+	"info": {
+		"_postman_id": "b7f774a5-23ac-4c31-bd14-a954673df940",
+		"name": "Chandra I P - QtasnimTestBackend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16700746"
+	},
+	"item": [
+		{
+			"name": "Jenis Barang",
+			"item": [
+				{
+					"name": "http://0.0.0.0:1313/api/jenis_barangs",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://0.0.0.0:1313/api/jenis_barangs",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "1313",
+							"path": [
+								"api",
+								"jenis_barangs"
+							]
+						},
+						"description": "get all jenis barang"
+					},
+					"response": []
+				},
+				{
+					"name": "http://0.0.0.0:1313/api/jenis_barangs/{id_jenis_barang}",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://0.0.0.0:1313/api/jenis_barangs/2",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "1313",
+							"path": [
+								"api",
+								"jenis_barangs",
+								"2"
+							]
+						},
+						"description": "get satu jenis barang"
+					},
+					"response": []
+				},
+				{
+					"name": "http://0.0.0.0:1313/api/jenis_barangs",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "jenis",
+									"value": "peralatan",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://0.0.0.0:1313/api/jenis_barangs",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "1313",
+							"path": [
+								"api",
+								"jenis_barangs"
+							]
+						},
+						"description": "save jenis barang baru"
+					},
+					"response": []
+				},
+				{
+					"name": "http://0.0.0.0:1313/api/jenis_barangs/{id_jenis_barang}",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "jenis",
+									"value": "peralatan Telah Edit",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://0.0.0.0:1313/api/jenis_barangs/3",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "1313",
+							"path": [
+								"api",
+								"jenis_barangs",
+								"3"
+							]
+						},
+						"description": "update jenis barang"
+					},
+					"response": []
+				},
+				{
+					"name": "http://0.0.0.0:1313/api/jenis_barangs/{id_jenis_barang}",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://0.0.0.0:1313/api/jenis_barangs/3",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "1313",
+							"path": [
+								"api",
+								"jenis_barangs",
+								"3"
+							]
+						},
+						"description": "delete jenis barang"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Master Barang",
+			"item": [
+				{
+					"name": "http://0.0.0.0:1313/api/barangs",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://0.0.0.0:1313/api/barangs",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "1313",
+							"path": [
+								"api",
+								"barangs"
+							]
+						},
+						"description": "get all barang"
+					},
+					"response": []
+				},
+				{
+					"name": "http://0.0.0.0:1313/api/barangs/{id_barang}",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://0.0.0.0:1313/api/barangs/2",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "1313",
+							"path": [
+								"api",
+								"barangs",
+								"2"
+							]
+						},
+						"description": "get satu barang"
+					},
+					"response": []
+				},
+				{
+					"name": "http://0.0.0.0:1313/api/barangs",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nama_barang",
+									"value": "kue",
+									"type": "text"
+								},
+								{
+									"key": "stock",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "jenis_barang_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://0.0.0.0:1313/api/barangs",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "1313",
+							"path": [
+								"api",
+								"barangs"
+							]
+						},
+						"description": "save barang baru"
+					},
+					"response": []
+				},
+				{
+					"name": "http://0.0.0.0:1313/api/barangs/{id_barang}",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nama_barang",
+									"value": "Kue",
+									"type": "text"
+								},
+								{
+									"key": "stock",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "jenis_barang_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://0.0.0.0:1313/api/barangs/6",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "1313",
+							"path": [
+								"api",
+								"barangs",
+								"6"
+							]
+						},
+						"description": "update barang"
+					},
+					"response": []
+				},
+				{
+					"name": "http://0.0.0.0:1313/api/barangs/{id_barang}",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://0.0.0.0:1313/api/barangs/6",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "1313",
+							"path": [
+								"api",
+								"barangs",
+								"6"
+							]
+						},
+						"description": "delete barang"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transaksi Header",
+			"item": [
+				{
+					"name": "http://0.0.0.0:1313/api/transaksi",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://0.0.0.0:1313/api/transaksi",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "1313",
+							"path": [
+								"api",
+								"transaksi"
+							]
+						},
+						"description": "get all transaksi header"
+					},
+					"response": []
+				},
+				{
+					"name": "http://0.0.0.0:1313/api/transaksi/{id_transaksi}",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://0.0.0.0:1313/api/transaksi/2",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "1313",
+							"path": [
+								"api",
+								"transaksi",
+								"2"
+							]
+						},
+						"description": "get satu transaksi header"
+					},
+					"response": []
+				},
+				{
+					"name": "http://0.0.0.0:1313/api/transaksi",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "tgl_transaksi",
+									"value": "2023-03-02",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://0.0.0.0:1313/api/transaksi",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "1313",
+							"path": [
+								"api",
+								"transaksi"
+							]
+						},
+						"description": "save transaksi header baru"
+					},
+					"response": []
+				},
+				{
+					"name": "http://0.0.0.0:1313/api/transaksi/{id_transaksi}",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "tgl_transaksi",
+									"value": "2023-03-02",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://0.0.0.0:1313/api/transaksi/6",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "1313",
+							"path": [
+								"api",
+								"transaksi",
+								"6"
+							]
+						},
+						"description": "update transaksi header"
+					},
+					"response": []
+				},
+				{
+					"name": "http://0.0.0.0:1313/api/transaksi/{id_transaksi}",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://0.0.0.0:1313/api/transaksi/6",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "1313",
+							"path": [
+								"api",
+								"transaksi",
+								"6"
+							]
+						},
+						"description": "delete transaksi header"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transaksi Detail",
+			"item": [
+				{
+					"name": "http://0.0.0.0:1313/api/transaksi_detail",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://0.0.0.0:1313/api/transaksi_detail",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "1313",
+							"path": [
+								"api",
+								"transaksi_detail"
+							]
+						},
+						"description": "get all transaksi detail"
+					},
+					"response": []
+				},
+				{
+					"name": "http://0.0.0.0:1313/api/transaksi_detail/{id_transaksi_detail}",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://0.0.0.0:1313/api/transaksi_detail/2",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "1313",
+							"path": [
+								"api",
+								"transaksi_detail",
+								"2"
+							]
+						},
+						"description": "get satu transaksi detail"
+					},
+					"response": []
+				},
+				{
+					"name": "http://0.0.0.0:1313/api/transaksi_detail",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "transaksi_id",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "barang_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "stock_awal",
+									"value": "75",
+									"type": "text"
+								},
+								{
+									"key": "qty_jual",
+									"value": "50",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://0.0.0.0:1313/api/transaksi_detail",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "1313",
+							"path": [
+								"api",
+								"transaksi_detail"
+							]
+						},
+						"description": "save transaksi detail baru"
+					},
+					"response": []
+				},
+				{
+					"name": "http://0.0.0.0:1313/api/transaksi_detail/{id_transaksi_detail}",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "transaksi_id",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "barang_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "stock_awal",
+									"value": "75",
+									"type": "text"
+								},
+								{
+									"key": "qty_jual",
+									"value": "20",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://0.0.0.0:1313/api/transaksi_detail/8",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "1313",
+							"path": [
+								"api",
+								"transaksi_detail",
+								"8"
+							]
+						},
+						"description": "update transaksi detail"
+					},
+					"response": []
+				},
+				{
+					"name": "http://0.0.0.0:1313/api/transaksi_detail/{id_transaksi_detail}",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://0.0.0.0:1313/api/transaksi_detail/8",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "1313",
+							"path": [
+								"api",
+								"transaksi_detail",
+								"8"
+							]
+						},
+						"description": "delete transaksi detail"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Report",
+			"item": [
+				{
+					"name": "http://0.0.0.0:1313/api/reportTrx?c_search=tgl_transaksi&search=2021-05-11",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://0.0.0.0:1313/api/reportTrx?c_search=nama_barang&search=kopi&c_sort=tgl_transaksi&sort=DESC",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "1313",
+							"path": [
+								"api",
+								"reportTrx"
+							],
+							"query": [
+								{
+									"key": "c_search",
+									"value": "nama_barang"
+								},
+								{
+									"key": "search",
+									"value": "kopi"
+								},
+								{
+									"key": "c_sort",
+									"value": "tgl_transaksi"
+								},
+								{
+									"key": "sort",
+									"value": "DESC"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://0.0.0.0:1313/api/compareTrx?tgl_awal=2021-05-05&tgl_akhir=2021-05-11",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://0.0.0.0:1313/api/compareTrx?tgl_awal=2021-05-05&tgl_akhir=2021-05-11",
+							"protocol": "http",
+							"host": [
+								"0",
+								"0",
+								"0",
+								"0"
+							],
+							"port": "1313",
+							"path": [
+								"api",
+								"compareTrx"
+							],
+							"query": [
+								{
+									"key": "tgl_awal",
+									"value": "2021-05-05"
+								},
+								{
+									"key": "tgl_akhir",
+									"value": "2021-05-11"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
