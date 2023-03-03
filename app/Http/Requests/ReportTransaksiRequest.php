@@ -24,10 +24,26 @@ class ReportTransaksiRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'c_search'      => 'string',
-            'search'        => 'string',
-            'c_sort'        => 'string',
-            'sort'          => 'string',
+            'c_search'      => [
+                'string',
+                'max:255',
+                "regex:/^([^\"!'\*\\\]*)$/"
+            ],
+            'search'        => [
+                'string',
+                'max:255',
+                "regex:/^([^\"!'\*\\\]*)$/"
+            ],
+            'c_sort'        => [
+                'string',
+                'max:255',
+                "regex:/^([^\"!'\*\\\]*)$/"
+            ],
+            'sort'          => [
+                'string',
+                'max:255',
+                "regex:/^([^\"!'\*\\\]*)$/"
+            ],
             'tgl_awal'      => 'date',
             'tgl_akhir'      => 'date',
         ];
