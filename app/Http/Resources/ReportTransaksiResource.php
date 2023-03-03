@@ -15,13 +15,15 @@ class ReportTransaksiResource extends JsonResource
     public function toArray(Request $request): array
     {
         $result = [
-            'nama_barang'           => $this->barang['nama_barang'],
-            'stok'                  => $this->stock_awal,
+            'id_trx'                => $this->id_trx_detail,
+            'kode_barang'           => $this->kode_barang,
+            'nama_barang'           => $this->nama_barang,
+            'stok'                  => $this->stok,
             'qty_jual'              => $this->qty_jual,
-            'tgl_transaksi'         => date('d-m-Y', strtotime($this->transaksi->tgl_transaksi)),
-            'jenis'                 => $this->barang->jenis_barang['jenis'],
+            'tgl_transaksi'         => date('d-m-Y', strtotime($this->tgl_transaksi)),
+            'kode_transaksi'        => $this->kode_transaksi,
+            'jenis'                 => $this->jenis,
         ];
         return $result;
-        // return parent::toArray($request);
     }
 }
