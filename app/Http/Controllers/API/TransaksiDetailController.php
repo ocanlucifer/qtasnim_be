@@ -36,10 +36,14 @@ class TransaksiDetailController extends BaseController
     {
         $brg_id = $request['barang_id'];
         $brg = Barang::find($brg_id);
+        $stockAkhir = $brg->stock - $request['qty_jual'];
+        if ($stockAkhir < 0) {
+            return $this->sendError('stock tidak mencukupi, saat ini hanya tersedia ' . $brg->stock . ' Pcs');
+        }
+        $request['stock_awal'] = $brg->stock;
         $data = $request->all();
         $transaksiDetail = TransaksiDetail::create($data);
         if ($transaksiDetail) {
-            $stockAkhir = $brg->stock - $data['qty_jual'];
             $brg->update([
                 'stock' => $stockAkhir,
             ]);
