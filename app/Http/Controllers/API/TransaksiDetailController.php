@@ -8,16 +8,23 @@ use App\Http\Resources\TransaksiDetailResource;
 use App\Models\Barang;
 use App\Models\TransaksiDetail;
 
+use Illuminate\Http\Request;
+
 class TransaksiDetailController extends BaseController
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $transaksiDetail = TransaksiDetail::with('transaksi', 'barang')->get();
+        $transaksiDetail = TransaksiDetail::with('transaksi', 'barang');
+        if ($request['idtrx']) {
+            $transaksiDetail->where('transaksi_id', $request['idtrx']);
+        }
+
+        $trxdetail = $transaksiDetail->get();
         if ($transaksiDetail->count() > 0) {
-            return $this->sendResponse(TransaksiDetailResource::collection($transaksiDetail), 'transaksiDetail retrieve successfully');
+            return $this->sendResponse(TransaksiDetailResource::collection($trxdetail), 'transaksiDetail retrieve successfully');
         }
         return $this->sendError('transaksiDetail data is empty');
     }

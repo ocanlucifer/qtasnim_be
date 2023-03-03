@@ -24,7 +24,7 @@ class TransaksiRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'kode_transaksi'        => 'sometimes|string|max:10|unique:transaksis,kode_transaksi,' . $this->route('transaksi'),
+            // 'kode_transaksi'        => 'sometimes|string|max:10|unique:transaksis,kode_transaksi,' . $this->route('transaksi'),
             'tgl_transaksi'         => 'required|date',
         ];
     }
